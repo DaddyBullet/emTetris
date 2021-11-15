@@ -1,0 +1,908 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "bg",
+            "X": 0,
+            "Y": 0,
+            "Width": 507,
+            "Height": 800,
+            "Visible": true,
+            "LockPosition": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "CustomContainerDefinitionName": "Game",
+            "Type": "CustomContainerInstance",
+            "Name": "game1",
+            "X": 0,
+            "Y": 0,
+            "Width": 507,
+            "Height": 800,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "roti",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 119
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game rotate_act",
+              "ActionComponent": "game1"
+            }
+          },
+          {
+            "InteractionName": "mli",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 97
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game move_left_act",
+              "ActionComponent": "game1"
+            }
+          },
+          {
+            "InteractionName": "mri",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 100
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game move_right_act",
+              "ActionComponent": "game1"
+            }
+          },
+          {
+            "InteractionName": "mdi",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 115
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game move_down_act",
+              "ActionComponent": "game1"
+            }
+          },
+          {
+            "InteractionName": "smdi",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 32
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game move_down_act",
+              "ActionComponent": "game1"
+            }
+          }
+        ],
+        "Name": "Screen1",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "bg",
+            "X": 0,
+            "Y": 0,
+            "Width": 331,
+            "Height": 694,
+            "Visible": true,
+            "LockPosition": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "CustomContainerDefinitionName": "Thetr",
+            "Type": "CustomContainerInstance",
+            "Name": "piece",
+            "X": 99,
+            "Y": -66,
+            "Width": 133,
+            "Height": 133,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "step_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Field step_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "step"
+            }
+          },
+          {
+            "InteractionName": "move_left_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Field move_left_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "move_left"
+            }
+          },
+          {
+            "InteractionName": "move_right_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Field move_right_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "move_right"
+            }
+          },
+          {
+            "InteractionName": "rotate_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Field rotate_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "rotate_piece"
+            }
+          },
+          {
+            "InteractionName": "move_down_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Field move_down_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "move_down"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "step_act",
+            "HasValue": false
+          },
+          {
+            "Name": "move_left_act",
+            "HasValue": false
+          },
+          {
+            "Name": "move_right_act",
+            "HasValue": false
+          },
+          {
+            "Name": "rotate_act",
+            "HasValue": false
+          },
+          {
+            "Name": "move_down_act",
+            "HasValue": false
+          }
+        ],
+        "Name": "Field",
+        "X": 0,
+        "Y": 0,
+        "Width": 331,
+        "Height": 694
+      },
+      {
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 133,
+              "Green": 133,
+              "Blue": 133
+            },
+            "BorderSize": 3,
+            "Alpha": 255,
+            "Name": "boxWithBorder1",
+            "X": 0,
+            "Y": 0,
+            "Width": 32,
+            "Height": 32,
+            "Visible": true,
+            "LockPosition": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [],
+        "Name": "Block",
+        "X": 0,
+        "Y": 0,
+        "Width": 32,
+        "Height": 32
+      },
+      {
+        "Components": [],
+        "Interactions": [
+          {
+            "InteractionName": "reinit_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Thetr reinit_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "reinit"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "reinit_act",
+            "HasValue": false
+          }
+        ],
+        "Name": "Thetr",
+        "X": 0,
+        "Y": 0,
+        "Width": 133,
+        "Height": 133
+      },
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "bg",
+            "X": 0,
+            "Y": 0,
+            "Width": 507,
+            "Height": 800,
+            "Visible": true,
+            "LockPosition": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "CustomContainerDefinitionName": "Field",
+            "Type": "CustomContainerInstance",
+            "Name": "field1",
+            "X": 6,
+            "Y": 100,
+            "Width": 331,
+            "Height": 694,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "main_lb",
+            "X": 155,
+            "Y": 31,
+            "Width": 171,
+            "Height": 49,
+            "Visible": true,
+            "LockPosition": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId2",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4",
+            "Name": "new_game_bt",
+            "X": 337,
+            "Y": 100,
+            "Width": 170,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId3",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4",
+            "Name": "pause",
+            "X": 337,
+            "Y": 160,
+            "Width": 170,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId6",
+              "UseBuffer": true,
+              "BufferSize": 64
+            },
+            "Name": "lines_lb",
+            "X": 337,
+            "Y": 375,
+            "Width": 166,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "pause_lb",
+            "X": 100,
+            "Y": 338,
+            "Width": 142,
+            "Height": 49,
+            "Visible": false,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Alpha": 255,
+            "IconPressed": "__designer\\Blue_Icons_Up_arrow_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Up_arrow_32.png",
+            "IconX": 15,
+            "IconY": 22,
+            "IconHeight": 17,
+            "IconWidth": 30,
+            "ButtonStyle": "Style5",
+            "IconStyle": "Icon67",
+            "Name": "up_bt",
+            "X": 392,
+            "Y": 518,
+            "Width": 60,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Alpha": 255,
+            "IconPressed": "__designer\\Blue_Icons_Next_arrow_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Next_arrow_32.png",
+            "IconX": 22,
+            "IconY": 15,
+            "IconHeight": 30,
+            "IconWidth": 17,
+            "ButtonStyle": "Style5",
+            "IconStyle": "Icon39",
+            "Name": "right_bt",
+            "X": 432,
+            "Y": 558,
+            "Width": 60,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Alpha": 255,
+            "IconPressed": "__designer\\Blue_Icons_Down_arrow_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Down_arrow_32.png",
+            "IconX": 15,
+            "IconY": 22,
+            "IconHeight": 17,
+            "IconWidth": 30,
+            "ButtonStyle": "Style5",
+            "IconStyle": "Icon13",
+            "Name": "down_bt",
+            "X": 392,
+            "Y": 598,
+            "Width": 60,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Alpha": 255,
+            "IconPressed": "__designer\\Blue_Icons_Back_arrow_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Back_arrow_32.png",
+            "IconX": 22,
+            "IconY": 15,
+            "IconHeight": 30,
+            "IconWidth": 17,
+            "ButtonStyle": "Style5",
+            "IconStyle": "Icon5",
+            "Name": "left_bt",
+            "X": 352,
+            "Y": 558,
+            "Width": 60,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "game_over",
+            "X": 132,
+            "Y": 319,
+            "Width": 243,
+            "Height": 49,
+            "Visible": false,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "new_game_btn_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "new_game_bt"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game new_game_act",
+              "ActionComponent": "Game"
+            }
+          },
+          {
+            "InteractionName": "toggle_pause_btn_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "pause"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game toggle_pause_act",
+              "ActionComponent": "Game"
+            }
+          },
+          {
+            "InteractionName": "new_game_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Game new_game_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "new_game"
+            }
+          },
+          {
+            "InteractionName": "toggle_pause_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Game toggle_pause_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "toggle_pause"
+            }
+          },
+          {
+            "InteractionName": "mdi",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Game move_down_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "move_down"
+            }
+          },
+          {
+            "InteractionName": "mli",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Game move_left_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "move_left"
+            }
+          },
+          {
+            "InteractionName": "mri",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Game move_right_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "move_right"
+            }
+          },
+          {
+            "InteractionName": "roti",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Game rotate_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "rotate"
+            }
+          },
+          {
+            "InteractionName": "tick_int",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Game tick_act"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tick"
+            }
+          },
+          {
+            "InteractionName": "bmli",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "left_bt"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game move_left_act",
+              "ActionComponent": "Game"
+            }
+          },
+          {
+            "InteractionName": "bmdi",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "down_bt"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game move_down_act",
+              "ActionComponent": "Game"
+            }
+          },
+          {
+            "InteractionName": "bmri",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "right_bt"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game move_right_act",
+              "ActionComponent": "Game"
+            }
+          },
+          {
+            "InteractionName": "broti",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "up_bt"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call Game rotate_act",
+              "ActionComponent": "Game"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "game_over"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "new_game_act",
+            "HasValue": false
+          },
+          {
+            "Name": "move_right_act",
+            "HasValue": false
+          },
+          {
+            "Name": "move_left_act",
+            "HasValue": false
+          },
+          {
+            "Name": "move_down_act",
+            "HasValue": false
+          },
+          {
+            "Name": "rotate_act",
+            "HasValue": false
+          },
+          {
+            "Name": "toggle_pause_act",
+            "HasValue": false
+          },
+          {
+            "Name": "tick_act",
+            "HasValue": false
+          }
+        ],
+        "Name": "Game",
+        "X": 0,
+        "Y": 0,
+        "Width": 507,
+        "Height": 800
+      }
+    ],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId1",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId2",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId3",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId4",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId5",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId6",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "numbers",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId7",
+        "IsResource": false
+      }
+    ],
+    "Name": "Tetris",
+    "Resolution": {
+      "Width": 507,
+      "Height": 800
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "2.0.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "1": "LCD1bpp",
+      "2": "LCD2bpp",
+      "4": "LCD4bpp",
+      "8": "LCD8bpp_ARGB2222",
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "FlashTargetCommand": "",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait"
+  },
+  "Version": "4.16.1",
+  "CreatedBy": "4.16.1"
+}
